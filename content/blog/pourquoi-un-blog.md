@@ -6,8 +6,6 @@ title: Pourquoi un blog
 ---
 
 
-## Introduction
-
 Hello les gens, ceci est mon blog ^^ 
 J'y mettrai essentiellement du contenu orienté sur le réseau mais avec la particularité de ne traiter que d'IPv6 et non d'IPv4. Il existe une foultitude de contenu dans le domaine des réseaux que ce soit des blogs, des livres, des chaines youtubes etc... mais au final assez peu qui traite essentiellement d'IPv6.
 
