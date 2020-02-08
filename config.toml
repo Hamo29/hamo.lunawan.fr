@@ -1,4 +1,4 @@
-baseurl = "https://hamo.lunawan.fr/"
+baseurl = "https://lunawan.fr/"
 title = "Blog d'Hamo"
 copyright = "Copyright &copy; 2020 - Jonathan Roulé"
 canonifyurls = true
