@@ -21,7 +21,7 @@ pygmentsCodeFences = true
     #instagram = "username"
     #stackoverflow = "username"
     #youtube = "user/username" # or channel/channelname
-    mastodon = "mamot.fr/Hamo29"
+    mastodon = "mamot.fr/@Hamo"
 
 [params]
     tagline = "Blog centré sur les réseaux et le logiciel libre"
