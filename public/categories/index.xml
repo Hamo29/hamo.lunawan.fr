@@ -1,0 +1,31 @@
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+   <title>Categories on Blog d&#39;Hamo</title>
+   <link>https://hamo.lunawan.fr/categories/</link>
+   <description>Recent content in Categories on Blog d&#39;Hamo</description>
+   <generator>Hugo -- gohugo.io</generator>
+   <copyright>Copyright &amp;copy; 2020 - Jonathan Roulé</copyright>
+   
+       <atom:link href="https://hamo.lunawan.fr/categories/index.xml" rel="self" type="application/rss+xml" />
+   
+   
+     <item>
+       <title>Pourquoi un blog</title>
+       <link>https://hamo.lunawan.fr/blog/pourquoi-un-blog/</link>
+       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+       
+       <guid>https://hamo.lunawan.fr/blog/pourquoi-un-blog/</guid>
+       <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Hello les gens, ceci est mon blog ^^
+J&amp;rsquo;y mettrai essentiellement du contenu orienté sur le réseau mais avec la particularité de ne traiter que d&amp;rsquo;IPv6 et non d&amp;rsquo;IPv4. Il existe une foultitude de contenu dans le domaine des réseaux que ce soit des blogs, des livres, des chaines youtubes etc&amp;hellip; mais au final assez peu qui traite essentiellement d&amp;rsquo;IPv6.&lt;/p&gt;
+
+&lt;p&gt;Dans les grandes lignes, j&amp;rsquo;y parlerai d&amp;rsquo;AS, de BGP, d&amp;rsquo;IS-IS, d&amp;rsquo;SRv6 et d&amp;rsquo;automatisation. J&amp;rsquo;espère que le contenu de ce blog vous plaira et si vous souhaitez me contacter je vous invite à passer par mastodon !&lt;/p&gt;
+</description>
+     </item>
+   
+ </channel>
+</rss>
