@@ -1,0 +1,166 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Blog d&#39;Hamo</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Blog centré sur les réseaux et le logiciel libre" />
+<meta name="author" content="Hamo" /><meta property="og:title" content="Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA" />
+<meta property="og:description" content="On va utiliser des adresses IPv6 ULA (RFC 4193) pour constituer notre réseau. Les adresses ULA du range fc00::/7 sont des adresses non routées sur internet. Elles ressemblent donc aux adresses IPs privées IPv4 (RFC 1918) mais elles ont un avantage de taille : au vu de l’espace d’adressage permis par le range fd00::/8 (qui est le range utilisé à l’heure actuelle pour les adresses ULA, tiré du range fc00::/7), nous avons des chances d’avoir un préfixe en /48 globalement unique." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lunawan.fr/posts/lunawan-p2/" />
+<meta property="article:published_time" content="2020-02-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-09T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA"/>
+<meta name="twitter:description" content="On va utiliser des adresses IPv6 ULA (RFC 4193) pour constituer notre réseau. Les adresses ULA du range fc00::/7 sont des adresses non routées sur internet. Elles ressemblent donc aux adresses IPs privées IPv4 (RFC 1918) mais elles ont un avantage de taille : au vu de l’espace d’adressage permis par le range fd00::/8 (qui est le range utilisé à l’heure actuelle pour les adresses ULA, tiré du range fc00::/7), nous avons des chances d’avoir un préfixe en /48 globalement unique."/>
+
+<meta name="generator" content="Hugo 0.59.1" />
+    
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://lunawan.fr/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
+  <link rel="stylesheet" type="text/css" href="https://lunawan.fr/css/styles.css" /></head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>
+                <a href="https://lunawan.fr/">Blog d&rsquo;Hamo</a>
+            </h1>
+
+      <ul id="social-media">
+             <li>
+               <a href="https://github.com/Hamo29" title="GitHub">
+               <i class="fab fa-github fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://linkedin.com/in/jonathan-roul%c3%a9-817971a8" title="LinkedIn">
+               <i class="fab fa-linkedin fa-lg"></i>
+               </a>
+             </li>
+             <li>
+               <a href="https://mamot.fr/@Hamo" title="Mastodon">
+               <i class="fab fa-mastodon fa-lg"></i>
+               </a>
+             </li>
+      </ul>
+      
+      <p><em>Blog centré sur les réseaux et le logiciel libre</em></p>
+      
+    </header>
+
+    
+<nav>
+    <ul>
+        
+        <li>
+            <a class="" href="https://lunawan.fr/apropos">
+                <i class="fa-li fa  fa-lg"></i><span>A propos</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://lunawan.fr/divers">
+                <i class="fa-li fa  fa-lg"></i><span>Divers</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://lunawan.fr/posts">
+                <i class="fa-li fa  fa-lg"></i><span>Posts</span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="" href="https://lunawan.fr/societe">
+                <i class="fa-li fa  fa-lg"></i><span>Société</span>
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+
+
+    <main>
+
+
+
+
+<article>
+
+    <h1>Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-02-09T00:00:00Z">Feb 9, 2020</time>
+        </li>
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
+
+    
+
+    
+
+
+    <p>On va utiliser des adresses IPv6 ULA (RFC 4193) pour constituer notre réseau. Les adresses ULA du range fc00::/7 sont des adresses non routées sur internet. Elles ressemblent donc aux adresses IPs privées IPv4 (RFC 1918) mais elles ont un avantage de taille : au vu de l’espace d’adressage permis par le range fd00::/8 (qui est le range utilisé à l’heure actuelle pour les adresses ULA, tiré du range fc00::/7), nous avons des chances d’avoir un préfixe en /48 globalement unique.</p>
+
+<p>Pour tirer son préfixe /48 depuis le fd00::/8, nous allons utiliser le site <a href="https://cd34.com/rfc4193/">https://cd34.com/rfc4193/</a> qui applique les recommandations de l’IETF. Ces recommandations sont sous la forme d’un algorithme.</p>
+
+<p>Dans les grandes lignes :
+* On récupère l’heure actuelle au format NTP 64 bits.
+* On récupère l’adresse mac d’une de ses interfaces réseaux.
+* On concatène l’heure de la journée avec l’adresse mac afin de créer une clé.
+* On calcule un condensat SHA-1 sur cette clé.
+* On utilise les 40 bits les moins significatifs comme identifiant global.</p>
+
+<p>Pour ma part j’ai obtenu le préfixe ULA fd49:fcca:b672::/48 pour le réseau LUNAWAN</p>
+
+<p>La prochaine partie traitera de la topologie du réseau de LUNAWAN.</p>
+
+
+</article>
+
+
+<section class="post-nav">
+    <ul>
+        
+        <li>
+            <a href="https://lunawan.fr/posts/lunawan-p1/"><i class="fa fa-chevron-circle-left"></i> Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?</a>
+        </li>
+        
+        
+    </ul>
+</section>
+    
+    
+
+
+
+
+
+</main>
+    <footer>
+        <h6>Copyright &copy; 2020 - Jonathan Roulé |
+            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
+            <a href="https://lunawan.fr/index.xml">Subscribe </a></h6>
+    </footer>
+</div>
+<script src="https://lunawan.fr/js/scripts.js"></script>
+
+</body>
+
+</html>
+

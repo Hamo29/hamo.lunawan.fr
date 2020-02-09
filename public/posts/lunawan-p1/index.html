@@ -7,16 +7,16 @@
   <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Blog centré sur les réseaux et le logiciel libre" />
-<meta name="author" content="Jonathan Roulé" /><link rel="alternate" type="application/rss+xml+xml" href="https://lunawan.fr/posts/index.xml" title="Blog d'Hamo" /><meta property="og:title" content="Posts" />
-<meta property="og:description" content="Blog centré sur les réseaux et le logiciel libre" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://lunawan.fr/posts/" />
-
-<meta property="og:updated_time" content="2020-02-09T00:00:00+00:00" />
+<meta name="author" content="Hamo" /><meta property="og:title" content="Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?" />
+<meta property="og:description" content="LUNAWAN est le réseau, pour le moment privé, que je vais développer au fur et à mesure des posts publiés sur ce blog. Ce sera un réseau IPv6 Only sur la partie backbone et qui me servira à réaliser des tests sur un réseau un peu sympa." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lunawan.fr/posts/lunawan-p1/" />
+<meta property="article:published_time" content="2020-02-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-09T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Blog centré sur les réseaux et le logiciel libre"/>
+<meta name="twitter:title" content="Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?"/>
+<meta name="twitter:description" content="LUNAWAN est le réseau, pour le moment privé, que je vais développer au fur et à mesure des posts publiés sur ce blog. Ce sera un réseau IPv6 Only sur la partie backbone et qui me servira à réaliser des tests sur un réseau un peu sympa."/>
 
 <meta name="generator" content="Hugo 0.59.1" />
     
@@ -92,43 +92,57 @@
 
 
 
-<section id="list">
+<article>
+
+    <h1>Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?</h1>
+
+    
+      <aside>
+    <ul>
+        <li>
+            <time class="post-date" datetime="2020-02-09T00:00:00Z">Feb 9, 2020</time>
+        </li>
+        
+
+        
+
+        <li>One minute read</li>
+    </ul>
+</aside>
 
     
 
     
-        <h2>Posts</h2>
-    
 
-    
 
-    
+    <p>LUNAWAN est le réseau, pour le moment privé, que je vais développer au fur et à mesure des posts publiés sur ce blog. Ce sera un réseau IPv6 Only sur la partie backbone et qui me servira à réaliser des tests sur un réseau un peu sympa. Ce réseau sera hébergé sur une seule machine (un petit raspberry pi 4) sur lequel je vais faire tourner des conteneurs LXC afin de simuler un réseau d’une dizaine de nœuds. Ce sera un réseau assez standard : IS-IS sur une seule aire et iBGP full mesh sur deux RS. Une fois que cette première étape sera passée, je rajouterai un overlay SRv6 afin de mieux appréhender le Segment Routing et probablement de l’EVPN afin d’étendre un L2 entre deux points du backbone.</p>
 
-    <h3>2020</h3>
+<p>Ce réseau s’appuiera sur de nombreux logiciels open source : LXC/LXD, Free Range Routing (FRR), Bird, VPP FD.IO, Bind et d’autres.</p>
+
+<p>A terme, j’ai pour projet d’obtenir un numéro d’AS et des ressources UGA IPv6 afin de relier LUNAWAN au reste de l’internet.</p>
+
+<p>Ce sera tout pour cette premier partie, la prochaine traitera de l’adressage ULA de LUNAWAN.</p>
+
+
+</article>
+
+
+<section class="post-nav">
     <ul>
         
         <li>
-            <a href="https://lunawan.fr/posts/lunawan-p1/">Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?</a>
-            <time class="date-meta">Feb 9</time>
+            <a href="https://lunawan.fr/posts/pourquoi-un-blog/"><i class="fa fa-chevron-circle-left"></i> Pourquoi un blog</a>
         </li>
         
-        <li>
-            <a href="https://lunawan.fr/posts/lunawan-p2/">Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA</a>
-            <time class="date-meta">Feb 9</time>
-        </li>
         
         <li>
-            <a href="https://lunawan.fr/posts/pourquoi-un-blog/">Pourquoi un blog</a>
-            <time class="date-meta">Feb 8</time>
+            <a href="https://lunawan.fr/posts/lunawan-p2/">Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA <i class="fa fa-chevron-circle-right"></i> </a>
         </li>
         
     </ul>
-    
-    
-
 </section>
-
-
+    
+    
 
 
 

@@ -12,45 +12,54 @@
    
    
      <item>
-       <title>A propos de l&#39;auteur</title>
-       <link>https://lunawan.fr/apropos/a-propos-de-l-auteur/</link>
+       <title>Création du réseau LUNAWAN – Deuxième partie – L’adressage ULA</title>
+       <link>https://lunawan.fr/posts/lunawan-p2/</link>
        <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
        
-       <guid>https://lunawan.fr/apropos/a-propos-de-l-auteur/</guid>
-       <description>
+       <guid>https://lunawan.fr/posts/lunawan-p2/</guid>
+       <description>&lt;p&gt;On va utiliser des adresses IPv6 ULA (RFC 4193) pour constituer notre réseau. Les adresses ULA du range fc00::/7 sont des adresses non routées sur internet. Elles ressemblent donc aux adresses IPs privées IPv4 (RFC 1918) mais elles ont un avantage de taille : au vu de l’espace d’adressage permis par le range fd00::/8 (qui est le range utilisé à l’heure actuelle pour les adresses ULA, tiré du range fc00::/7), nous avons des chances d’avoir un préfixe en /48 globalement unique.&lt;/p&gt;
 
-&lt;h2 id=&#34;a-propos-de-l-auteur&#34;&gt;A propos de l&amp;rsquo;auteur&lt;/h2&gt;
+&lt;p&gt;Pour tirer son préfixe /48 depuis le fd00::/8, nous allons utiliser le site &lt;a href=&#34;https://cd34.com/rfc4193/&#34;&gt;https://cd34.com/rfc4193/&lt;/a&gt; qui applique les recommandations de l’IETF. Ces recommandations sont sous la forme d’un algorithme.&lt;/p&gt;
 
-&lt;p&gt;Je suis un passioné de réseaux et de logiciel libre donc dans la mesure du possible, je traiterai essentiellement de ces deux sujets.
-Je réside sur la pointe bretonne. Je ne sais pas si des finistériens se perdront sur ce blog mais je serai ravi d&amp;rsquo;échanger avec vous (avec des non-finistériens également =) ).&lt;/p&gt;
+&lt;p&gt;Dans les grandes lignes :
+* On récupère l’heure actuelle au format NTP 64 bits.
+* On récupère l’adresse mac d’une de ses interfaces réseaux.
+* On concatène l’heure de la journée avec l’adresse mac afin de créer une clé.
+* On calcule un condensat SHA-1 sur cette clé.
+* On utilise les 40 bits les moins significatifs comme identifiant global.&lt;/p&gt;
 
-&lt;p&gt;Pour ceux qui voudraient me contacter, merci de passer par Mastodon.&lt;/p&gt;
+&lt;p&gt;Pour ma part j’ai obtenu le préfixe ULA fd49:fcca:b672::/48 pour le réseau LUNAWAN&lt;/p&gt;
+
+&lt;p&gt;La prochaine partie traitera de la topologie du réseau de LUNAWAN.&lt;/p&gt;
 </description>
      </item>
    
      <item>
-       <title>Fonctionnement du blog</title>
-       <link>https://lunawan.fr/apropos/fonctionnement-du-blog/</link>
+       <title>Création du réseau LUNAWAN – Première partie - Lunawan, Késako ?</title>
+       <link>https://lunawan.fr/posts/lunawan-p1/</link>
        <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
        
-       <guid>https://lunawan.fr/apropos/fonctionnement-du-blog/</guid>
-       <description>
+       <guid>https://lunawan.fr/posts/lunawan-p1/</guid>
+       <description>&lt;p&gt;LUNAWAN est le réseau, pour le moment privé, que je vais développer au fur et à mesure des posts publiés sur ce blog. Ce sera un réseau IPv6 Only sur la partie backbone et qui me servira à réaliser des tests sur un réseau un peu sympa. Ce réseau sera hébergé sur une seule machine (un petit raspberry pi 4) sur lequel je vais faire tourner des conteneurs LXC afin de simuler un réseau d’une dizaine de nœuds. Ce sera un réseau assez standard : IS-IS sur une seule aire et iBGP full mesh sur deux RS. Une fois que cette première étape sera passée, je rajouterai un overlay SRv6 afin de mieux appréhender le Segment Routing et probablement de l’EVPN afin d’étendre un L2 entre deux points du backbone.&lt;/p&gt;
 
-&lt;h2 id=&#34;fonctionneemnt-du-blog&#34;&gt;Fonctionneemnt du blog&lt;/h2&gt;
+&lt;p&gt;Ce réseau s’appuiera sur de nombreux logiciels open source : LXC/LXD, Free Range Routing (FRR), Bird, VPP FD.IO, Bind et d’autres.&lt;/p&gt;
 
-&lt;p&gt;Pour le moment, le contenu de ce blog est découpé en 3 catégories : Posts, Société et Divers.&lt;/p&gt;
+&lt;p&gt;A terme, j’ai pour projet d’obtenir un numéro d’AS et des ressources UGA IPv6 afin de relier LUNAWAN au reste de l’internet.&lt;/p&gt;
 
-&lt;h3 id=&#34;posts&#34;&gt;Posts&lt;/h3&gt;
+&lt;p&gt;Ce sera tout pour cette premier partie, la prochaine traitera de l’adressage ULA de LUNAWAN.&lt;/p&gt;
+</description>
+     </item>
+   
+     <item>
+       <title>Pourquoi un blog</title>
+       <link>https://lunawan.fr/posts/pourquoi-un-blog/</link>
+       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+       
+       <guid>https://lunawan.fr/posts/pourquoi-un-blog/</guid>
+       <description>&lt;p&gt;Hello les gens, ceci est mon blog ^^
+J&amp;rsquo;y mettrai essentiellement du contenu orienté sur le réseau mais avec la particularité de ne traiter que d&amp;rsquo;IPv6 et non d&amp;rsquo;IPv4. Il existe une foultitude de contenu dans le domaine des réseaux que ce soit des blogs, des livres, des chaines youtubes etc&amp;hellip; mais au final assez peu qui traite essentiellement d&amp;rsquo;IPv6.&lt;/p&gt;
 
-&lt;p&gt;J&amp;rsquo;y parlerai essentiellement de sujets techniques autour d&amp;rsquo;IPv6 et de l&amp;rsquo;automatisation.&lt;/p&gt;
-
-&lt;h3 id=&#34;société&#34;&gt;Société&lt;/h3&gt;
-
-&lt;p&gt;La partie société concernera des posts plus ou moins longs centrés sur des lois ou des déclarations sur le numérique.&lt;/p&gt;
-
-&lt;h3 id=&#34;divers&#34;&gt;Divers&lt;/h3&gt;
-
-&lt;p&gt;En gros, tout ce qui ne rentre pas dans les deux autres catégories.&lt;/p&gt;
+&lt;p&gt;Dans les grandes lignes, j&amp;rsquo;y parlerai d&amp;rsquo;AS, de BGP, d&amp;rsquo;IS-IS, d&amp;rsquo;SRv6 et d&amp;rsquo;automatisation. J&amp;rsquo;espère que le contenu de ce blog vous plaira et si vous souhaitez me contacter je vous invite à passer par mastodon !&lt;/p&gt;
 </description>
      </item>
    
