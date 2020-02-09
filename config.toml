@@ -9,6 +9,7 @@ paginate = 3
 summaryLength = 30
 enableEmoji = true
 pygmentsCodeFences = true
+enableRobotsTXT = true
 
 # Note: to disable a social network icon delete or comment out the corresponding line
 [author]
@@ -38,15 +39,33 @@ pygmentsCodeFences = true
 #    weight = 1
 
 # uncomment to enable the Categories link on the main toolbar
+#  [[menu.main]]
+#    identifier = "categories"
+#    name = "Categories"
+#    url = "/categories"
+#    weight = 1
+
   [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories"
+    identifier = "Posts"
+    name = "Posts"
+    url = "/posts"
     weight = 1
 
-#  [[menu.main]]
-#    identifier = "Posts"
-#    name = "Posts"
-#    url = "/Posts"
-#    weight = 1
+  [[menu.main]]
+    identifier = "Société"
+    name = "Société"
+    url = "/societe"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "A propos"
+    name = "A propos"
+    url = "/apropos"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "Divers"
+    name = "Divers"
+    url = "/divers"
+    weight = 1
 

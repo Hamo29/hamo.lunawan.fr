@@ -11,15 +11,45 @@
    
    
      <item>
-       <title>Pourquoi un blog</title>
-       <link>https://lunawan.fr/blog/pourquoi-un-blog/</link>
-       <pubDate>Sat, 08 Feb 2020 00:00:00 +0000</pubDate>
+       <title>A propos de l&#39;auteur</title>
+       <link>https://lunawan.fr/apropos/a-propos-de-l-auteur/</link>
+       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
        
-       <guid>https://lunawan.fr/blog/pourquoi-un-blog/</guid>
-       <description>&lt;p&gt;Hello les gens, ceci est mon blog ^^
-J&amp;rsquo;y mettrai essentiellement du contenu orienté sur le réseau mais avec la particularité de ne traiter que d&amp;rsquo;IPv6 et non d&amp;rsquo;IPv4. Il existe une foultitude de contenu dans le domaine des réseaux que ce soit des blogs, des livres, des chaines youtubes etc&amp;hellip; mais au final assez peu qui traite essentiellement d&amp;rsquo;IPv6.&lt;/p&gt;
+       <guid>https://lunawan.fr/apropos/a-propos-de-l-auteur/</guid>
+       <description>
 
-&lt;p&gt;Dans les grandes lignes, j&amp;rsquo;y parlerai d&amp;rsquo;AS, de BGP, d&amp;rsquo;IS-IS, d&amp;rsquo;SRv6 et d&amp;rsquo;automatisation. J&amp;rsquo;espère que le contenu de ce blog vous plaira et si vous souhaitez me contacter je vous invite à passer par mastodon !&lt;/p&gt;
+&lt;h2 id=&#34;a-propos-de-l-auteur&#34;&gt;A propos de l&amp;rsquo;auteur&lt;/h2&gt;
+
+&lt;p&gt;Je suis un passioné de réseaux et de logiciel libre donc dans la mesure du possible, je traiterai essentiellement de ces deux sujets.
+Je réside sur la pointe bretonne. Je ne sais pas si des finistériens se perdront sur ce blog mais je serai ravi d&amp;rsquo;échanger avec vous (avec des non-finistériens également =) ).&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui voudraient me contacter, merci de passer par Mastodon.&lt;/p&gt;
+</description>
+     </item>
+   
+     <item>
+       <title>Fonctionnement du blog</title>
+       <link>https://lunawan.fr/apropos/fonctionnement-du-blog/</link>
+       <pubDate>Sun, 09 Feb 2020 00:00:00 +0000</pubDate>
+       
+       <guid>https://lunawan.fr/apropos/fonctionnement-du-blog/</guid>
+       <description>
+
+&lt;h2 id=&#34;fonctionneemnt-du-blog&#34;&gt;Fonctionneemnt du blog&lt;/h2&gt;
+
+&lt;p&gt;Pour le moment, le contenu de ce blog est découpé en 3 catégories : Posts, Société et Divers.&lt;/p&gt;
+
+&lt;h3 id=&#34;posts&#34;&gt;Posts&lt;/h3&gt;
+
+&lt;p&gt;J&amp;rsquo;y parlerai essentiellement de sujets techniques autour d&amp;rsquo;IPv6 et de l&amp;rsquo;automatisation.&lt;/p&gt;
+
+&lt;h3 id=&#34;société&#34;&gt;Société&lt;/h3&gt;
+
+&lt;p&gt;La partie société concernera des posts plus ou moins longs centrés sur des lois ou des déclarations sur le numérique.&lt;/p&gt;
+
+&lt;h3 id=&#34;divers&#34;&gt;Divers&lt;/h3&gt;
+
+&lt;p&gt;En gros, tout ce qui ne rentre pas dans les deux autres catégories.&lt;/p&gt;
 </description>
      </item>
    
