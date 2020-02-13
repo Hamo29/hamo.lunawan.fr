@@ -6,7 +6,7 @@ title: Fonctionnement du blog
 ---
 
 
-## Fonctionneemnt du blog
+## Fonctionement du blog
 
 Pour le moment, le contenu de ce blog est découpé en 3 catégories : Posts, Société et Divers.
 
